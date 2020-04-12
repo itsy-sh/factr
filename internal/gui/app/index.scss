@@ -1,0 +1,64 @@
+@import "scss/icons";
+
+body{
+  padding:0;
+  margin: 0;
+}
+
+.main{
+  margin: 10px auto;
+  width: 350px;
+  height: 600px;
+  border: 1px solid #CCC;
+
+
+  .header{
+    margin: 0;
+    padding-right: 20px;
+    border-bottom: 1px solid #CCC;
+    input{
+      border: 0;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+
+  }
+
+  .entry-list{
+    padding: 10px;
+
+    .entry{
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #CCCCCC;
+
+      table{
+        width: 100%;
+        .name{
+          padding: 0 0 10px;
+        }
+        th{
+          text-align: right;
+        }
+        th, th {
+          padding: 0 5px;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+.z1{
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.z2{
+  box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.z3{
+  box-shadow: 4px 5px 2px 0px rgba(0, 0, 0, 0.1);
+}
