@@ -1,47 +1,162 @@
 @import "scss/icons";
 
-body{
-  padding:0;
+body {
+  padding: 0;
   margin: 0;
 }
 
-.main{
+button {
+  border: 1px solid #e2e2e2;
+  background-color: #fafafa;
+  color: black;
+  padding: 3px 6px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: #e2e2e2;
+  }
+
+  /* Green */
+  &.success {
+    border-color: #4CAF50;
+    color: green;
+
+    &:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+  }
+
+  /* Blue */
+  &.info {
+    border-color: #2196F3;
+    color: dodgerblue;
+
+    &:hover {
+      background: #2196F3;
+      color: white;
+    }
+  }
+
+
+  /* Orange */
+  &.warning {
+    border-color: #ff9800;
+    color: orange;
+
+    &:hover {
+      background: #ff9800;
+      color: white;
+    }
+  }
+
+
+  /* Red */
+  &.danger {
+    border-color: #f44336;
+    color: red;
+
+    &:hover {
+      background: #f44336;
+      color: #fafafa;
+    }
+  }
+}
+
+.main {
+  position: relative;
   margin: 10px auto;
   width: 350px;
   height: 600px;
   border: 1px solid #CCC;
 
+  .modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(#ccc, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
 
-  .header{
+    .content {
+      width: 100%;
+      padding: 10px;
+      background: #777777;
+      color: #f9f9f9;
+      text-align: center;
+
+      .text {
+        padding: 10px;
+      }
+
+      .options {
+        button {
+          margin: 5px;
+        }
+      }
+    }
+  }
+
+  .header {
     margin: 0;
     padding-right: 20px;
     border-bottom: 1px solid #CCC;
-    input{
+
+    input {
       border: 0;
       width: 100%;
       padding: 10px;
       font-size: 16px;
     }
-
-
+  }
+  .footer{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+    font-size: 40px;
+    display: flex;
+    align-items: stretch;
+    border-top: 1px solid #CCC;
+    div{
+      &:first-child{
+        border-left: none;
+      }
+      cursor: pointer;
+      padding: 10px;
+      text-align: center;
+      flex-grow: 1;
+      border-left: 1px solid #CCC ;
+    }
   }
 
-  .entry-list{
+  .entry-list {
     padding: 10px;
-
-    .entry{
+    .entry {
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #CCCCCC;
 
-      table{
+      .remove {
+        float: right;
+        margin-bottom: -16px;
+      }
+
+      table {
         width: 100%;
-        .name{
+
+        .name {
           padding: 0 0 10px;
         }
-        th{
+
+        th {
           text-align: right;
         }
+
         th, th {
           padding: 0 5px;
         }
@@ -50,15 +165,22 @@ body{
     }
   }
 
+
+  i.button {
+    cursor: pointer;
+  }
+
 }
 
 
-.z1{
+.z1 {
   box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
-.z2{
+
+.z2 {
   box-shadow: 3px 3px 2px 0px rgba(0, 0, 0, 0.1);
 }
-.z3{
+
+.z3 {
   box-shadow: 4px 5px 2px 0px rgba(0, 0, 0, 0.1);
 }
