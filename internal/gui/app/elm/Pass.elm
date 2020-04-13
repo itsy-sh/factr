@@ -28,7 +28,8 @@ init =
 
 
 type Msg
-    = Search String
+    = Nop
+    | Search String
     | AskRemoveEntry String
     | RemoveEntry String
     | TogglePassword String
@@ -86,6 +87,9 @@ emptyModel =
 update : Msg -> Model -> Model
 update msg model =
     case msg of
+        Nop ->
+            model
+
         Search query ->
             { model | query = query }
 
