@@ -80,6 +80,24 @@ emptyModel =
                     , ( "Name", "Carl Rasmus Holm" )
                     ]
           }
+        , { name = "/mf/VISA"
+          , secret = "1234 5678 9012 3456"
+          , metadata =
+                Dict.fromList
+                    [ ( "csv", "123" )
+                    , ( "date", "11/21" )
+                    , ( "Name", "Carl Rasmus Holm" )
+                    ]
+          }
+        , { name = "/mf/AMEX"
+          , secret = "1234 5678 9012 3456"
+          , metadata =
+                Dict.fromList
+                    [ ( "csv", "123" )
+                    , ( "date", "11/21" )
+                    , ( "Name", "Carl Rasmus Holm" )
+                    ]
+          }
         ]
     }
 
