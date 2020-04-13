@@ -3,10 +3,8 @@ module Main exposing (..)
 -- MAIN
 
 import Browser
-import Dict exposing (Dict)
-import Html exposing (Html, button, div, i, input, table, td, text, th, tr)
-import Html.Attributes exposing (class, colspan, placeholder, type_)
-import Html.Events exposing (onClick, onInput)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 import Pass as Pass
 
 
@@ -23,7 +21,7 @@ main =
 
 
 type Msg
-    = GotPass Pass.Msg
+    = GotPassMsg Pass.Msg
 
 
 type Model
@@ -47,9 +45,9 @@ emptyModel =
 update : Msg -> Model -> Model
 update msg model =
     case ( msg, model ) of
-        ( GotPass subMsg, Pass pass ) ->
+        ( GotPassMsg subMsg, Pass pass ) ->
             Pass.update subMsg pass
-                |> updateWith Pass GotPass model
+                |> updateWith Pass GotPassMsg model
 
 
 updateWith : (subModel -> Model) -> (subMsg -> Msg) -> Model -> subModel -> Model
@@ -67,10 +65,7 @@ view model =
         outlet =
             case model of
                 Pass subModule ->
-                    Pass.view subModule
-
-                _ ->
-                    text "nothing"
+                    Html.map GotPassMsg (Pass.view subModule)
     in
     div [ class "main" ]
         [ div [ class "outlet" ] [ outlet ]
